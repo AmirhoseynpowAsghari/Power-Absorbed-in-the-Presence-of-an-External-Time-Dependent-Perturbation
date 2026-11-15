@@ -4,7 +4,8 @@
 
 - `draft_prb.tex` — APS REVTeX 4.2 manuscript source using the `prb,reprint` two-column journal layout; this is the authoritative editable version.
 - `draft_references.bib` — bibliography entries used in the source.
-- `draft_prb.pdf` — generated reading proof; the REVTeX source remains authoritative and editable.
+- `draft_prb_native.pdf` — separate APS/REVTeX two-column author-version proof generated from the current source; the older `draft_prb.pdf` is intentionally preserved unchanged.
+- `draft_prb.pdf` — earlier Pandoc-to-Typst reading proof, retained unchanged for provenance; it does not represent the current REVTeX source.
 
 The archived corrected paper at `../../../archive/pre_f02_baseline/paper_correction_results/arXiv_2607.02812_corrected.pdf` is retained as a read-only reference; this draft is a separate manuscript and does not overwrite it.
 
@@ -53,13 +54,13 @@ Strict-policy results remain primary; missing or rejected strict samples are gap
 
 ## Build
 
-The editable source now requests the APS Physical Review B `reprint` layout (two columns), rather than `preprint`. Compile it from this directory with REVTeX 4.2 and a working LaTeX/BibTeX installation:
+The editable source requests the APS Physical Review B `reprint` layout: two-column text, APS section and equation numbering, front matter, and full-width figure floats. Compile it from this directory with REVTeX 4.2 and a working LaTeX/BibTeX installation:
 
 ```sh
 latexmk -pdf -interaction=nonstopmode draft_prb.tex
 ```
 
-The checked-in `draft_prb.pdf` is still the earlier 16-page Pandoc-to-Typst reading proof. It is not a native REVTeX rendering and it predates the five additional figure insertions and the `reprint` layout update. A native PDF could not be produced in this sandbox because no TeX/REVTeX engine is installed. This explains why the earlier PDF did not look like a typeset Physical Review paper: the source was APS-formatted, but its rendered proof was a Typst conversion, not an APS class build. The `.tex` and `.bib` are authoritative; compile them with REVTeX to obtain the genuine journal-style layout before submission. Figure paths are relative and assume compilation from this directory.
+`draft_prb_native.pdf` is a separate 16-page XeTeX/REVTeX 4.2 author-version proof generated from the current source and existing repository figures. It follows the Physical Review article typography and two-column composition illustrated by the attached Li (2008) paper; the `.tex` and `.bib` remain the editable source of record. The published-paper masthead, volume/page assignment, DOI, and received/published dates in the example are publisher metadata and have not been fabricated for this unpublished draft. The older `draft_prb.pdf` remains untouched: it is the earlier Pandoc-to-Typst proof and does not match the current source. Figure paths are relative and assume compilation from this directory.
 
 ## Open items for author review
 

@@ -6,6 +6,7 @@
 
 \usepackage{amsmath,amssymb,bm,graphicx}
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Quasiparticle absorption in a Rashba-correlated-hopping superconductor: a constant-vertex model and its limits},pdfauthor={Reza Afzali, Bahman Takrim, Amir Hossein Asghari}}
 \graphicspath{{../../ultrasonic/figures/}{../../ultrasonic/figures/strict_policy/}{../../ultrasonic/analysis/wwn_temperature_maxima/}}
 
 \newcommand{\kb}{k_{\mathrm B}}
@@ -63,20 +64,24 @@ so that
 The calculation assumes the HHM intraband, time-reversed pairing structure and uses the corresponding real, even gap amplitude. It does not solve a general multicomponent order parameter.
 
 Completing the square gives
-\begin{align}
+\begin{equation}
+\begin{aligned}
  E^2(\epsilon)&=\kappa^2(\epsilon-\epsilon_*)^2+\Emin^2,\\
- \kappa&=\sqrt{1+b^2},\qquad
- \epsilon_* = \frac{\mu+bD_0}{1+b^2},\qquad
- \Emin=\frac{|D_0-b\mu|}{\kappa}.
- \label{eq:complete-square}
-\end{align}
+ \kappa&=\sqrt{1+b^2},\\
+ \epsilon_* &=\frac{\mu+bD_0}{1+b^2},\\
+ \Emin&=\frac{|D_0-b\mu|}{\kappa}.
+\end{aligned}
+\label{eq:complete-square}
+\end{equation}
 For every $E\geq\Emin$, there are up to two band-energy roots,
 \begin{equation}
- \ell=\sqrt{E^2-\Emin^2},\qquad
- \epsilon_\sigma(E)=\epsilon_*+\sigma\frac{\ell}{\kappa},\qquad
- \xi_\sigma=\epsilon_\sigma-\mu,\qquad
- \Dbar_\sigma=D_0-b\epsilon_\sigma.
- \label{eq:branches}
+\begin{aligned}
+ \ell&=\sqrt{E^2-\Emin^2},\\
+ \epsilon_\sigma(E)&=\epsilon_*+\sigma\frac{\ell}{\kappa},\\
+ \xi_\sigma&=\epsilon_\sigma-\mu,\\
+ \Dbar_\sigma&=D_0-b\epsilon_\sigma.
+\end{aligned}
+\label{eq:branches}
 \end{equation}
 The roots are retained only where $\epsilon_\sigma$ lies within the exact support of the chosen lattice band. We use $\sigma$ for the branch label and reserve $s$ for helicity.
 
@@ -135,54 +140,65 @@ where $\Gamma$ is the Nambu lift of the specified microscopic electron--phonon v
 
 For the scalar Case-I process, the Bogoliubov scattering amplitude is $u u'-v v'$. In the real-gap convention used here,
 \begin{equation}
- u_\sigma^2=\frac12\left(1+\frac{\xi_\sigma}{E}\right),\qquad
- v_\sigma^2=\frac12\left(1-\frac{\xi_\sigma}{E}\right),\qquad
- u_\sigma v_\sigma=-\frac{\Dbar_\sigma}{2E}.
+\begin{aligned}
+ u_\sigma^2&=\frac12\left(1+\frac{\xi_\sigma}{E}\right),\qquad
+ v_\sigma^2=\frac12\left(1-\frac{\xi_\sigma}{E}\right),\\
+ u_\sigma v_\sigma&=-\frac{\Dbar_\sigma}{2E}.
+\end{aligned}
 \end{equation}
 The signed branch values then give
-\begin{align}
+\begin{equation}
+\begin{aligned}
  C_{\mathrm{I}}(E,\sigma;E',\sigma')
  &=|u_\sigma u_{\sigma'}'-v_\sigma v_{\sigma'}'|^2\\
- &=u_\sigma^2u_{\sigma'}'^2+v_\sigma^2v_{\sigma'}'^2
-   -2(u_\sigma v_\sigma)(u_{\sigma'}'v_{\sigma'}')\\
- &=\frac12\left[1+\frac{\xi_\sigma(E)\xi_{\sigma'}(E')-
- \Dbar_\sigma(E)\Dbar_{\sigma'}(E')}{EE'}\right].
- \label{eq:coherence}
-\end{align}
+ &=u_\sigma^2u_{\sigma'}'^2+v_\sigma^2v_{\sigma'}'^2\\
+ &\quad-2(u_\sigma v_\sigma)(u_{\sigma'}'v_{\sigma'}')\\
+ &=\frac12\left[1+
+ \frac{\xi_\sigma(E)\xi_{\sigma'}(E')}{EE'}\right.\\
+ &\qquad\left.-\frac{\Dbar_\sigma(E)\Dbar_{\sigma'}(E')}{EE'}\right].
+\end{aligned}
+\label{eq:coherence}
+\end{equation}
 This is the Case-I factor for the stated scalar vertex and mean-field Bogoliubov transformation. The branch quantities $\xi_\sigma=\epsilon_\sigma-\mu$ retain their signs; the absolute values in $|d\epsilon_\sigma/dE|$ and $E_{\min}$ are unrelated Jacobian/threshold magnitudes. Replacing $\xi_\sigma\xi_{\sigma'}$ by $|\xi_\sigma||\xi_{\sigma'}|$, or changing the sign of the gap-product term, does not follow from this matrix element and is not used for the primary result.
 
 Fermi's golden rule for absorption of one quantum of energy $\hbar\omega$ gives, up to the common mode and volume normalization,
-\begin{align}
+\begin{equation}
+\begin{aligned}
  \Wsc &\propto \frac{2\pi}{\hbar}(\hbar\omega)|B|^2 S_{\mathrm{sc}},\\
- S_{\mathrm{sc}}&=\sum_{\sigma,\sigma'}\int dE\,
- \nu_\sigma(E)\nu_{\sigma'}(E+\hbar\omega)
- C_{\mathrm I}(E,\sigma;E+\hbar\omega,\sigma')
- [f(E)-f(E+\hbar\omega)],
- \label{eq:scattering-integral}
-\end{align}
+ S_{\mathrm{sc}}&=\sum_{\sigma,\sigma'}\int dE\\
+ &\quad\times\nu_\sigma(E)\nu_{\sigma'}(E+\hbar\omega)\\
+ &\quad\times C_{\mathrm I}(E,\sigma;E+\hbar\omega,\sigma')\\
+ &\quad\times[f(E)-f(E+\hbar\omega)].
+\end{aligned}
+\label{eq:scattering-integral}
+\end{equation}
 with $f(E)=[e^{E/(\kb T)}+1]^{-1}$. The energy delta function has already been used to set $E'=E+\hbar\omega$. Each branch pair has its own band-support integration limits.
 
 For the numerical quadrature, set $\ell=\sqrt{E^2-E_{\min}^2}$ and $\ell'=\sqrt{E'^2-E_{\min}^2}$. Since $\nu_\sigma(E)\,dE=N(\epsilon_\sigma)\,d\ell/\kappa$, only the initial-state DOS measure absorbs the change of variable; the final-state DOS remains per unit $E'$. The resulting last form of the scattering integral is
-\begin{align}
- E&=\sqrt{\ell^2+E_{\min}^2},\qquad E'=E+\hbar\omega,\qquad
- \ell'=\sqrt{E'^2-E_{\min}^2},\\
- \mathcal{D}_{\sigma\sigma'}&=\left\{\ell\geq0:\ |\epsilon_\sigma(\ell)|\leq W_{\mathrm{band}},\quad
- |\epsilon_{\sigma'}(\ell')|\leq W_{\mathrm{band}}\right\},\\
- S_{\mathrm{sc}}&=\sum_{\sigma,\sigma'}\int_{\mathcal{D}_{\sigma\sigma'}}\frac{d\ell}{\kappa^2}
- N\!\left(\epsilon_\sigma(\ell)\right)N\!\left(\epsilon_{\sigma'}(\ell')\right)
- \frac{E'}{\ell'}\,C_{\mathrm I}(E,\sigma;E',\sigma')
- [f(E)-f(E')].
- \label{eq:ell-integral}
-\end{align}
+\begin{equation}
+\begin{aligned}
+ E&=\sqrt{\ell^2+E_{\min}^2},\qquad E'=E+\hbar\omega,\\
+ \ell'&=\sqrt{E'^2-E_{\min}^2},\\
+ \mathcal{D}_{\sigma\sigma'}&=\{\ell\geq0:\ |\epsilon_\sigma(\ell)|\leq W_{\mathrm{band}},\\
+ &\qquad\qquad |\epsilon_{\sigma'}(\ell')|\leq W_{\mathrm{band}}\},\\
+ S_{\mathrm{sc}}&=\sum_{\sigma,\sigma'}\int_{\mathcal{D}_{\sigma\sigma'}}\frac{d\ell}{\kappa^2}\\
+ &\quad\times N\!\left(\epsilon_\sigma(\ell)\right)
+ N\!\left(\epsilon_{\sigma'}(\ell')\right)\frac{E'}{\ell'}\\
+ &\quad\times C_{\mathrm I}(E,\sigma;E',\sigma')[f(E)-f(E')].
+\end{aligned}
+\label{eq:ell-integral}
+\end{equation}
 Here $\epsilon_\sigma(\ell)=\epsilon_*+\sigma\ell/\kappa$ and $\mathcal{D}_{\sigma\sigma'}$ is the exact branch-pair support set for $|\epsilon|\leq W_{\mathrm{band}}$; an empty set contributes zero. The factor $E'/\ell'$ is retained from the final-state DOS. Dropping it by transforming both DOS factors with the initial-state variable would change the integral and fails the isotropic $s$-wave low-frequency benchmark.
 
 The normal reference is the $D_0=D_S=0$ limit of the same energy-averaged model,
 \begin{equation}
- S_{\mathrm N}=\int d\epsilon\,N(\epsilon)N(\epsilon+\hbar\omega)
- [f_{\mathrm N}(\epsilon;\mu_{\mathrm N})-f_{\mathrm N}(\epsilon+\hbar\omega;\mu_{\mathrm N})],
- \qquad
- \Rsc=\frac{S_{\mathrm{sc}}}{S_{\mathrm N}}.
- \label{eq:ratio}
+\begin{aligned}
+ S_{\mathrm N}&=\int d\epsilon\,N(\epsilon)N(\epsilon+\hbar\omega)\\
+ &\quad\times[f_{\mathrm N}(\epsilon;\mu_{\mathrm N})
+ -f_{\mathrm N}(\epsilon+\hbar\omega;\mu_{\mathrm N})],\\
+ \Rsc&=\frac{S_{\mathrm{sc}}}{S_{\mathrm N}}.
+\end{aligned}
+\label{eq:ratio}
 \end{equation}
 Here $\mu_{\mathrm N}(T)$ is obtained from the normal-state number equation at the same filling. Equation~(\ref{eq:ratio}) is a ratio for the assumed constant-vertex model. If the physical vertex varies over the Fermi surface or helicity bands, it must be included in both numerator and denominator and need not cancel.
 
@@ -195,11 +211,11 @@ not $2\Delta_{\mathrm{eff}}$ in general. The plotted principal quantity is $\Rsc
 
 A direct comparison of the signed Case-I expression with the absolute-value and earlier-paper prescriptions is provided as a numerical diagnostic. Only the signed expression in Eq.~(\ref{eq:coherence}) is used for the primary results; the other variants are included to show the effect of the algebraic choice and are not alternative accepted results.
 
-The branch-resolved coherence diagnostic further illustrates why the signs of $\xi_\sigma$ and $\bar\Delta_\sigma$ must be kept until the matrix element is formed. The coherence weight is not a branch-independent constant: for a given transition energy, changing either root changes the signed products in Eq.~(\ref{eq:coherence)}. This dependence is a consequence of the chosen Bogoliubov amplitudes, not an additional fitted factor.
+The branch-resolved coherence diagnostic further illustrates why the signs of $\xi_\sigma$ and $\bar\Delta_\sigma$ must be kept until the matrix element is formed. The coherence weight is not a branch-independent constant: for a given transition energy, changing either root changes the signed products in Eq.~(\ref{eq:coherence}). This dependence is a consequence of the chosen Bogoliubov amplitudes, not an additional fitted factor.
 
 \begin{figure*}[t]
  \includegraphics[width=\textwidth]{coherence_factors_per_branch.png}
- \caption{Case-I coherence factors resolved by energy-root pair for the displayed temperatures. The branch-pair variation visualizes the signed products in Eq.~(\ref{eq:coherence)} and the distinct contributions that are summed in Eq.~(\ref{eq:scattering-integral)}. It is a diagnostic of the implemented scalar-vertex model; it does not encode momentum or helicity selection at finite wave vector.}
+ \caption{Case-I coherence factors resolved by energy-root pair for the displayed temperatures. The branch-pair variation visualizes the signed products in Eq.~(\ref{eq:coherence}) and the distinct contributions that are summed in Eq.~(\ref{eq:scattering-integral}). It is a diagnostic of the implemented scalar-vertex model; it does not encode momentum or helicity selection at finite wave vector.}
  \label{fig:branch-coherence}
 \end{figure*}
 
@@ -345,16 +361,18 @@ The authors thank colleagues for discussions. [Please replace this placeholder w
 \end{acknowledgments}
 
 \appendix
-\section{Generic finite-$q$ BdG response}
+\section{Generic finite-wave-vector Bogoliubov--de Gennes response}
 
-For a specified acoustic perturbation, the positive-energy quasiparticle-scattering contribution has the structure
-\begin{align}
- P_{\mathrm{sc}}(\bm q,\lambda)={2\pi\over\hbar}(\hbar\omega_{\bm q\lambda})
- \sum_{\bm k,m,n}|M_{nm}(\bm k,\bm q,\lambda)|^2
- &[f(E_{m\bm k})-f(E_{n,\bm{k+q}})]\\[-2pt]
- &\times\delta(E_{n,\bm{k+q}}-E_{m\bm k}-\hbar\omega_{\bm q\lambda}),
- \label{eq:finiteq-sc}
-\end{align}
+For a specified acoustic perturbation, the positive-energy scattering power takes the form
+\begin{equation}
+\begin{aligned}
+ P_{\mathrm{sc}}(\bm q,\lambda)&=\frac{2\pi}{\hbar}(\hbar\omega_{\bm q\lambda})\\
+ &\quad\times\sum_{\bm k,m,n}|M_{nm}(\bm k,\bm q,\lambda)|^2\\
+ &\quad\times[f(E_{m\bm k})-f(E_{n,\bm{k+q}})]\\
+ &\quad\times\delta(E_{n,\bm{k+q}}-E_{m\bm k}-\hbar\omega_{\bm q\lambda}).
+\end{aligned}
+\label{eq:finiteq-sc}
+\end{equation}
 with $M$ from Eq.~(\ref{eq:bdg-matrix-element}) and crystal momenta folded modulo reciprocal vectors. Pair creation has a thermal factor $1-f(E_{m\bm k})-f(E_{n,\bm{q-k}})$ and energy delta $\delta(E_{m\bm k}+E_{n,\bm{q-k}}-\hbar\omega_{\bm q\lambda})$. The equations specify the kinematics and matrix-element structure only; the normalizations and numerical response require the missing microscopic vertex and mode data.
 
 The scalar Rashba overlap in Eq.~(\ref{eq:helicity-overlap}) follows from the helicity projectors $P_s(\bm k)=[1+s\hat{\bm g}_{\bm k}\cdot\bm\sigma]/2$. For a non-scalar strain vertex, the spin matrix elements must be evaluated with that vertex rather than multiplied by this scalar overlap as an independent factor.
