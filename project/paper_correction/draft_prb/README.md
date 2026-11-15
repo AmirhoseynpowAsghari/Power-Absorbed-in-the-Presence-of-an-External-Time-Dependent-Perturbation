@@ -6,6 +6,8 @@
 - `draft_references.bib` — bibliography entries used in the source.
 - `draft_prb.pdf` — generated reading proof; the REVTeX source remains authoritative and editable.
 
+The archived corrected paper at `../../../archive/pre_f02_baseline/paper_correction_results/arXiv_2607.02812_corrected.pdf` is retained as a read-only reference; this draft is a separate manuscript and does not overwrite it.
+
 The author names and affiliation follow the original manuscript in `../vendor/arXiv_2607.02812_original.pdf`; please confirm the author list, corresponding-author details, acknowledgments, and funding before submission.
 
 ## Scientific scope of this draft
@@ -15,8 +17,9 @@ This is a corrected **model-paper draft**, not a claim that the project has comp
 The manuscript corrects or qualifies these original claims/formulas:
 
 - Uses the signed Case-I factor derived from the stated Bogoliubov matrix element, with energy conservation imposed on quasiparticle energies.
-- Keeps the two energy-inversion roots and the Jacobian in the branch-resolved quasiparticle DOS.
+- Keeps the two energy-inversion roots and the Jacobian in the branch-resolved quasiparticle DOS; derives the final $\ell$-quadrature explicitly, retaining the final-state $E'/\ell'$ DOS factor and exact branch-pair band support.
 - Distinguishes the helicity label from the energy-branch label.
+- Uses the signed $\xi_\sigma\xi_{\sigma'}$ Case-I factor; absolute-value and earlier-paper variants appear only in the comparison diagnostic.
 - Identifies the actual pair-channel threshold in this model as `hbar*omega = 2 E_min`, not `2 Delta_eff` in general.
 - Does not call `W/W_N` a superfluid weight or a material-specific attenuation coefficient.
 - Does not equate strain-modulated hopping with a scalar density vertex without a microscopic derivation.
@@ -36,9 +39,10 @@ No figure data or image files were copied, overwritten, or regenerated for the m
 5. `ultrasonic/figures/W_WN_groups_VSO_scan.png` — corrected first-paper Group D, retained as a relaxed-window comparison distinct from the strict scan.
 6. `ultrasonic/analysis/wwn_temperature_maxima/temperature_envelope_max_vs_U.png` — pointwise envelope over the five sampled temperatures, with strict and relaxed policies separately styled.
 7. `ultrasonic/analysis/wwn_temperature_maxima/temperature_peak_analysis_two_panel.png` — strict-only exact sampled maxima and their temperature dependence.
-8. `ultrasonic/figures/branch_decomposition.png` — energy-root branches and the model-specific spectral threshold.
-9. `ultrasonic/figures/dual_space_k_vs_energy.png` — numerical cross-check within the unrestricted model.
-10. `ultrasonic/figures/soc_explicit_vertex.png` — helicity-vertex sensitivity diagnostic, explicitly not a finite-$q$ calculation.
+8. `ultrasonic/figures/W_WN_coherence_variants.png` — signed, absolute-value, earlier-paper, and textbook coherence prescriptions; only the signed form is used in the primary results.
+9. `ultrasonic/figures/branch_decomposition.png` — energy-root branches and the model-specific spectral threshold.
+10. `ultrasonic/figures/dual_space_k_vs_energy.png` — numerical cross-check within the unrestricted model.
+11. `ultrasonic/figures/soc_explicit_vertex.png` — helicity-vertex sensitivity diagnostic, explicitly not a finite-$q$ calculation.
 
 Strict-policy results remain primary; missing or rejected strict samples are gaps, not zeros. The corrected Group C/D composites are shown separately and explicitly identified as relaxed-window legacy comparisons, not replacements for the strict family figures. The maxima plots use only existing sampled data; no interpolation, smoothing, jitter, or response recalculation was applied.
 
@@ -50,11 +54,11 @@ For a publication-layout build, compile the editable source from this directory 
 latexmk -pdf -interaction=nonstopmode draft_prb.tex
 ```
 
-The checked-in 15-page PDF is a reading proof generated in this sandbox through Pandoc-to-Typst because no TeX engine is installed here. It was visually checked for the shared affiliation, all ten included figure assets, captions, strict/relaxed policy labels, and bibliography. This conversion is not a substitute for compiling the REVTeX source: equation/layout details can differ, so use the `.tex` and `.bib` files as the authoritative manuscript and rebuild them with REVTeX before submission. Figure paths are relative and assume compilation from this directory.
+The checked-in 16-page PDF is a reading proof generated in this sandbox through Pandoc-to-Typst because no TeX engine is installed here. It was visually checked for the shared affiliation, all eleven included figure assets, captions, strict/relaxed policy labels, the signed-coherence derivation, the final integral, and bibliography. This conversion is not a substitute for compiling the REVTeX source: equation/layout details can differ, so use the `.tex` and `.bib` files as the authoritative manuscript and rebuild them with REVTeX before submission. Figure paths are relative and assume compilation from this directory.
 
 ## Open items for author review
 
 1. Confirm the author list, correspondence, acknowledgments, and funding.
 2. Decide whether the paper should remain a clearly labeled phenomenological model study or wait for a specified electron--phonon vertex and finite-q calculation.
 3. Verify references and any claims against the cited source papers before submission; the current draft cites only the HHM and Levy works represented in the repository.
-4. Review the strict-policy figures, corrected legacy Group C/D composites, and maxima-analysis figures in context. All are existing repository outputs; the manuscript only references them and does not regenerate or modify them.
+4. Review the strict-policy figures, corrected legacy Group C/D composites, maxima-analysis figures, and coherence-variant diagnostic in context. All are existing repository outputs; the manuscript only references them and does not regenerate or modify them.

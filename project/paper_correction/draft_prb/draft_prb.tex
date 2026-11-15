@@ -125,14 +125,23 @@ where $\Gamma$ is the Nambu lift of the specified microscopic electron--phonon v
 
 \section{Scattering response in the constant-vertex model}
 
-For the scalar Case-I process, the Bogoliubov scattering amplitude is $u u'-v v'$. With signed $\xi$ and signed gap amplitudes, its squared coherence factor is
+For the scalar Case-I process, the Bogoliubov scattering amplitude is $u u'-v v'$. In the real-gap convention used here,
 \begin{equation}
+ u_\sigma^2=\frac12\left(1+\frac{\xi_\sigma}{E}\right),\qquad
+ v_\sigma^2=\frac12\left(1-\frac{\xi_\sigma}{E}\right),\qquad
+ u_\sigma v_\sigma=-\frac{\Dbar_\sigma}{2E}.
+\end{equation}
+The signed branch values then give
+\begin{align}
  C_{\mathrm{I}}(E,\sigma;E',\sigma')
- =\frac12\left[1+\frac{\xi_\sigma(E)\xi_{\sigma'}(E')-
+ &=|u_\sigma u_{\sigma'}'-v_\sigma v_{\sigma'}'|^2\\
+ &=u_\sigma^2u_{\sigma'}'^2+v_\sigma^2v_{\sigma'}'^2
+   -2(u_\sigma v_\sigma)(u_{\sigma'}'v_{\sigma'}')\\
+ &=\frac12\left[1+\frac{\xi_\sigma(E)\xi_{\sigma'}(E')-
  \Dbar_\sigma(E)\Dbar_{\sigma'}(E')}{EE'}\right].
  \label{eq:coherence}
-\end{equation}
-This is the Case-I factor for the stated scalar vertex and mean-field Bogoliubov transformation. Replacing $\xi\xi'$ by $|\xi||\xi'|$, or changing the sign of the gap-product term, does not follow from that matrix element and is not used for the primary result.
+\end{align}
+This is the Case-I factor for the stated scalar vertex and mean-field Bogoliubov transformation. The branch quantities $\xi_\sigma=\epsilon_\sigma-\mu$ retain their signs; the absolute values in $|d\epsilon_\sigma/dE|$ and $E_{\min}$ are unrelated Jacobian/threshold magnitudes. Replacing $\xi_\sigma\xi_{\sigma'}$ by $|\xi_\sigma||\xi_{\sigma'}|$, or changing the sign of the gap-product term, does not follow from this matrix element and is not used for the primary result.
 
 Fermi's golden rule for absorption of one quantum of energy $\hbar\omega$ gives, up to the common mode and volume normalization,
 \begin{align}
@@ -144,6 +153,20 @@ Fermi's golden rule for absorption of one quantum of energy $\hbar\omega$ gives,
  \label{eq:scattering-integral}
 \end{align}
 with $f(E)=[e^{E/(\kb T)}+1]^{-1}$. The energy delta function has already been used to set $E'=E+\hbar\omega$. Each branch pair has its own band-support integration limits.
+
+For the numerical quadrature, set $\ell=\sqrt{E^2-E_{\min}^2}$ and $\ell'=\sqrt{E'^2-E_{\min}^2}$. Since $\nu_\sigma(E)\,dE=N(\epsilon_\sigma)\,d\ell/\kappa$, only the initial-state DOS measure absorbs the change of variable; the final-state DOS remains per unit $E'$. The resulting last form of the scattering integral is
+\begin{align}
+ E&=\sqrt{\ell^2+E_{\min}^2},\qquad E'=E+\hbar\omega,\qquad
+ \ell'=\sqrt{E'^2-E_{\min}^2},\\
+ \mathcal{D}_{\sigma\sigma'}&=\left\{\ell\geq0:\ |\epsilon_\sigma(\ell)|\leq W_{\mathrm{band}},\quad
+ |\epsilon_{\sigma'}(\ell')|\leq W_{\mathrm{band}}\right\},\\
+ S_{\mathrm{sc}}&=\sum_{\sigma,\sigma'}\int_{\mathcal{D}_{\sigma\sigma'}}\frac{d\ell}{\kappa^2}
+ N\!\left(\epsilon_\sigma(\ell)\right)N\!\left(\epsilon_{\sigma'}(\ell')\right)
+ \frac{E'}{\ell'}\,C_{\mathrm I}(E,\sigma;E',\sigma')
+ [f(E)-f(E')].
+ \label{eq:ell-integral}
+\end{align}
+Here $\epsilon_\sigma(\ell)=\epsilon_*+\sigma\ell/\kappa$ and $\mathcal{D}_{\sigma\sigma'}$ is the exact branch-pair support set for $|\epsilon|\leq W_{\mathrm{band}}$; an empty set contributes zero. The factor $E'/\ell'$ is retained from the final-state DOS. Dropping it by transforming both DOS factors with the initial-state variable would change the integral and fails the isotropic $s$-wave low-frequency benchmark.
 
 The normal reference is the $D_0=D_S=0$ limit of the same energy-averaged model,
 \begin{equation}
@@ -161,6 +184,14 @@ The same operator also has an anomalous pair-creation channel with $E+E'=\hbar\o
  \label{eq:pair-threshold}
 \end{equation}
 not $2\Delta_{\mathrm{eff}}$ in general. The plotted principal quantity is $\Rsc$, the scattering component only. It is the complete modeled absorption only where Eq.~(\ref{eq:pair-threshold}) is not satisfied. We do not report a full finite-$q$ absorption ratio.
+
+A direct comparison of the signed Case-I expression with the absolute-value and earlier-paper prescriptions is provided as a numerical diagnostic. Only the signed expression in Eq.~(\ref{eq:coherence}) is used for the primary results; the other variants are included to show the effect of the algebraic choice and are not alternative accepted results.
+
+\begin{figure}[t]
+ \includegraphics[width=\linewidth]{W_WN_coherence_variants.png}
+ \caption{Scattering-only $W/W_N$ versus $T/T_c$ for four coherence-factor prescriptions at the three SOC values shown. Variant (a) uses signed $\xi_\sigma\xi_{\sigma'}$ and is the Case-I factor derived from the stated Bogoliubov amplitude. The $|\xi_\sigma||\xi_{\sigma'}|$ variant, the earlier-paper prescription, and the textbook Case-I comparison are shown only as algebraic diagnostics; none replaces the signed primary result. The logarithmic ordinate emphasizes low-temperature behavior. This existing variant sweep is a separate sensitivity diagnostic, not the strict-policy family output used for the primary results; it supplements, but does not establish, the coherence-factor derivation.}
+ \label{fig:coherence-variants}
+\end{figure}
 
 \section{Numerical procedure and parameter choices}
 
