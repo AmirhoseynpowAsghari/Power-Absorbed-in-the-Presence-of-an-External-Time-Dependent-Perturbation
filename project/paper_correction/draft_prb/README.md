@@ -2,7 +2,7 @@
 
 ## Files
 
-- `draft_prb.tex` — APS REVTeX 4.2 manuscript source, structured as a Physical Review B working draft.
+- `draft_prb.tex` — APS REVTeX 4.2 manuscript source using the `prb,reprint` two-column journal layout; this is the authoritative editable version.
 - `draft_references.bib` — bibliography entries used in the source.
 - `draft_prb.pdf` — generated reading proof; the REVTeX source remains authoritative and editable.
 
@@ -43,22 +43,27 @@ No figure data or image files were copied, overwritten, or regenerated for the m
 9. `ultrasonic/figures/branch_decomposition.png` — energy-root branches and the model-specific spectral threshold.
 10. `ultrasonic/figures/dual_space_k_vs_energy.png` — numerical cross-check within the unrestricted model.
 11. `ultrasonic/figures/soc_explicit_vertex.png` — helicity-vertex sensitivity diagnostic, explicitly not a finite-$q$ calculation.
+12. `ultrasonic/figures/branch_structure_sigma_vs_s.png` — explains the distinct energy-root (`sigma`) and Rashba-helicity (`s`) indices.
+13. `ultrasonic/figures/coherence_factors_per_branch.png` — branch-pair Case-I coherence diagnostic illustrating why signed root variables enter the transition weight.
+14. `ultrasonic/figures/strict_policy/soc_scans_by_U.png` — existing strict-policy SOC scans at fixed `U`; absent/rejected samples remain gaps.
+15. `ultrasonic/figures/strict_policy/extrema_by_U.png` — strict-policy sampled maxima/minima versus `U` for the shown SOC and temperature panels.
+16. `ultrasonic/figures/strict_policy/extrema_tracks_by_soc.png` — sampled extrema over the stored `U` grid versus SOC; open markers identify `U`-boundary extrema.
 
 Strict-policy results remain primary; missing or rejected strict samples are gaps, not zeros. The corrected Group C/D composites are shown separately and explicitly identified as relaxed-window legacy comparisons, not replacements for the strict family figures. The maxima plots use only existing sampled data; no interpolation, smoothing, jitter, or response recalculation was applied.
 
 ## Build
 
-For a publication-layout build, compile the editable source from this directory with REVTeX 4.2 and a working LaTeX/BibTeX installation:
+The editable source now requests the APS Physical Review B `reprint` layout (two columns), rather than `preprint`. Compile it from this directory with REVTeX 4.2 and a working LaTeX/BibTeX installation:
 
 ```sh
 latexmk -pdf -interaction=nonstopmode draft_prb.tex
 ```
 
-The checked-in 16-page PDF is a reading proof generated in this sandbox through Pandoc-to-Typst because no TeX engine is installed here. It was visually checked for the shared affiliation, all eleven included figure assets, captions, strict/relaxed policy labels, the signed-coherence derivation, the final integral, and bibliography. This conversion is not a substitute for compiling the REVTeX source: equation/layout details can differ, so use the `.tex` and `.bib` files as the authoritative manuscript and rebuild them with REVTeX before submission. Figure paths are relative and assume compilation from this directory.
+The checked-in `draft_prb.pdf` is still the earlier 16-page Pandoc-to-Typst reading proof. It is not a native REVTeX rendering and it predates the five additional figure insertions and the `reprint` layout update. A native PDF could not be produced in this sandbox because no TeX/REVTeX engine is installed. This explains why the earlier PDF did not look like a typeset Physical Review paper: the source was APS-formatted, but its rendered proof was a Typst conversion, not an APS class build. The `.tex` and `.bib` are authoritative; compile them with REVTeX to obtain the genuine journal-style layout before submission. Figure paths are relative and assume compilation from this directory.
 
 ## Open items for author review
 
 1. Confirm the author list, correspondence, acknowledgments, and funding.
 2. Decide whether the paper should remain a clearly labeled phenomenological model study or wait for a specified electron--phonon vertex and finite-q calculation.
 3. Verify references and any claims against the cited source papers before submission; the current draft cites only the HHM and Levy works represented in the repository.
-4. Review the strict-policy figures, corrected legacy Group C/D composites, maxima-analysis figures, and coherence-variant diagnostic in context. All are existing repository outputs; the manuscript only references them and does not regenerate or modify them.
+4. Review all referenced strict-policy, extrema, branch/coherence, corrected legacy Group C/D, and validation figures in context. All are existing repository outputs; the manuscript only references them and does not regenerate or modify them. Boundary extrema and rejected samples are described explicitly; no extrema are interpolated, and none is a free-energy stability test.
