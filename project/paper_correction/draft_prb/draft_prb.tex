@@ -242,15 +242,9 @@ For parameter-family plots, we use the repository's strict bare-band chemical-po
 
 The figures in this section report the energy-averaged, constant-vertex scattering ratio. Strict-window outputs are the primary admissibility results: a missing strict root or rejected stage-two state is shown as a gap, not as zero response. These curves remain conditional on the fitted gap inputs and the shared matrix element; they are not a material-specific finite-$q$ ultrasonic prediction.
 
-\subsection{Strict-window parameter families}
+\subsection{Strict and relaxed parameter families}
 
-The first three figures show complementary views of the strict-policy families. The $U$-scan resolves the sampled response across interaction strength at five fixed SOC values, while the SOC-scan shows the converse family at several fixed $U$. The temperature/gap panels retain the existing strict-window comparison to the supplied gap scale. The square markers in the $U$-scan denote the generator's $D_0(0)<0.05t$ diagnostic; they are not zero-response markers. The printed no-root counts and gaps identify where no strict superconducting root was accepted.
-
-\begin{figure*}[t]
- \includegraphics[width=\textwidth]{strict_policy/WWN_vs_TTc_and_Delta_VSOfamilies.png}
- \caption{Strict-window constant-vertex scattering ratio versus $T/T_c$ and normalized effective gap for the parameter families identified in the panels. Only strict band-admissible roots are displayed. Blank regions and gaps indicate absent or rejected samples, not zero absorption. These model results show the scattering channel only; they omit the finite-$q$ acoustic vertex and any pair-creation contribution above its threshold.}
- \label{fig:strict-temperature}
-\end{figure*}
+The following families are presented in strict/relaxed companion pairs. The strict-window results are primary: they retain only roots whose chemical potential lies within the analytic bare-band interval, with rejected or missing samples left as gaps rather than zeros. The relaxed-window companions retain residual-verified roots outside that interval as diagnostics; their open triangles mark out-of-band zero-temperature chemical potentials. The red squares in the $U$-family plots instead mark the separate $D_0(0)<0.05t$ diagnostic. The two symbols flag different conditions. Policy comparisons are useful for showing how the admissibility rule changes the sampled domain and apparent extrema; they do not establish free-energy stability among in-band roots.
 
 \begin{figure*}[t]
  \includegraphics[width=\textwidth]{strict_policy/WWN_vs_U_families_VSO.png}
@@ -259,33 +253,63 @@ The first three figures show complementary views of the strict-policy families. 
 \end{figure*}
 
 \begin{figure*}[t]
+ \includegraphics[width=\textwidth]{WWN_vs_U_families_VSO.png}
+ \caption{Relaxed-window companion to Fig.~\ref{fig:strict-u-families}: $W/W_N$ versus $U/t$ for the same SOC and temperature families. Open triangles identify points whose zero-temperature chemical potential is outside the bare-band interval; these relaxed roots are retained as diagnostics, not as the primary strict-admissibility result. In particular, the additional low-$U$ coverage can move a plotted maximum to the scan boundary and make an interior strict-policy peak less apparent.}
+ \label{fig:relaxed-u-families}
+\end{figure*}
+
+\begin{figure*}[t]
  \includegraphics[width=\textwidth]{strict_policy/WWN_vs_VSO_families_U.png}
  \caption{Strict-window $W/W_N$ versus $V_{\mathrm{SO}}/t$ for the interaction families and temperature fractions marked in the panels. The displayed SOC trends are conditional on the shared constant matrix element and supplied gap/$T_c$ inputs; missing-root samples are gaps, not zeros. This scan complements the strict $U$-family figure and does not establish a universal SOC enhancement or suppression.}
  \label{fig:strict-soc}
+\end{figure*}
+
+\begin{figure*}[t]
+ \includegraphics[width=\textwidth]{WWN_vs_VSO_families_U.png}
+ \caption{Relaxed-window companion to Fig.~\ref{fig:strict-soc}, with the same fixed-$U$ families and temperature fractions. Open triangles mark relaxed roots with zero-temperature chemical potentials outside the bare band. These points extend the displayed SOC curves but are diagnostic under the band-admissibility criterion; they should not be read as a universal SOC trend or as a stability comparison.}
+ \label{fig:relaxed-soc}
 \end{figure*}
 
 A denser fixed-$U$ view of the same strict-policy output helps separate the response's parameter dependence from root admissibility. Increasing $V_{\mathrm{SO}}$ changes the helicity-resolved band structure and, through the number and gap equations used to generate the inputs, changes the sampled model response. The curves need not be smooth through rejected samples: those points are deliberately left as gaps. This scan therefore documents conditional model behavior on the stored grid and should not be read as a universal monotonic SOC law.
 
 \begin{figure*}[t]
  \includegraphics[width=\textwidth]{strict_policy/soc_scans_by_U.png}
- \caption{Strict-policy $W/W_N$ versus $V_{\mathrm{SO}}/t$ at five fixed interaction strengths, for the four temperature choices identified in the panels. Each plotted point is an existing sampled result; rejected or absent in-band states remain gaps. The visible SOC dependence combines changes in the model spectrum and supplied superconducting state, under the constant-vertex approximation. It is not an isolated measurement of a microscopic SOC effect and does not establish a universal enhancement or suppression.}
+ \caption{Strict-policy $W/W_N$ versus $V_{\mathrm{SO}}/t$ at five fixed interaction strengths, for the four temperature choices identified in the panels. Each plotted point is an existing sampled result; rejected or absent in-band states remain gaps. Open symbols mark endpoints of the available valid profiles, not a separate band-status flag. The visible SOC dependence combines changes in the model spectrum and supplied superconducting state, under the constant-vertex approximation. It is not an isolated measurement of a microscopic SOC effect and does not establish a universal enhancement or suppression.}
  \label{fig:strict-soc-fixed-u}
+\end{figure*}
+
+\begin{figure*}[t]
+ \includegraphics[width=\textwidth]{soc_scans_by_U.png}
+ \caption{Relaxed-policy companion to Fig.~\ref{fig:strict-soc-fixed-u}: fixed-$U$ SOC scans at the same temperatures. The relaxed calculation can retain out-of-band roots; open symbols in this source figure denote endpoints of valid profiles, not out-of-band status. Thus the added coverage and any peaks or trend extensions are policy-dependent diagnostics, not accepted strict-window results or a universal SOC effect.}
+ \label{fig:relaxed-soc-fixed-u}
 \end{figure*}
 
 \subsection{Sampled extrema across the strict-policy scan}
 
-To summarize the strict scan without interpolation, we also track its global sampled maximum and minimum over $U$ as SOC varies. These extrema answer a limited numerical question: what are the largest and smallest admissible computed ratios on the sampled $U$ grid for each fixed SOC and temperature? They are not derivatives, continuous-parameter extrema, or thermodynamic phase-selection criteria. Open symbols identify extrema attained at a $U$ boundary, where the scan cannot establish whether the curve would turn outside the sampled interval.
+To summarize the strict scan without interpolation, we also track its global sampled maximum and minimum over $U$ as SOC varies. These extrema answer a limited numerical question: what are the largest and smallest admissible computed ratios on the sampled $U$ grid for each fixed SOC and temperature? They are not derivatives, continuous-parameter extrema, or thermodynamic phase-selection criteria. Open symbols identify extrema at endpoints of the available valid $U$ profiles; those endpoints can arise from a root-admissibility edge or temperature cutoff, and need not be the outer edge of the full scan.
 
 \begin{figure*}[t]
  \includegraphics[width=\textwidth]{strict_policy/extrema_by_U.png}
- \caption{Strict-policy $W/W_N$ versus $U/t$ for the indicated fixed SOC values and temperature panels, with the sampled maxima and minima marked. Rejected or out-of-band samples are gaps; the absolute-temperature panels include only in-band superconducting states. The marked extrema are taken over the stored discrete samples, not interpolated. This plot summarizes the finite scan only and does not determine which in-band solution is thermodynamically stable.}
+ \caption{Strict-policy $W/W_N$ versus $U/t$ for the indicated fixed SOC values and temperature panels, with the sampled maxima and minima marked. Rejected or out-of-band samples are gaps; the absolute-temperature panels include only in-band superconducting states. The marked extrema are taken over the stored discrete samples, not interpolated; open markers denote extrema at endpoints of the available valid profiles (which can reflect a root-admissibility edge or a temperature cutoff, not only the outer scan boundary). This plot summarizes the finite scan only and does not determine which in-band solution is thermodynamically stable.}
  \label{fig:strict-extrema-u}
 \end{figure*}
 
 \begin{figure*}[t]
+ \includegraphics[width=\textwidth]{extrema_by_U.png}
+ \caption{Relaxed-policy companion to Fig.~\ref{fig:strict-extrema-u}. The marked maxima and minima are taken over the same discrete $U$ samples but include relaxed roots, including out-of-band cases; these are diagnostics and are not substituted for missing strict values. The resulting extrema can differ from the strict ones because the candidate set differs. Open markers denote endpoints of available valid profiles, which may reflect a temperature cutoff or a gap in valid data rather than the outer scan boundary; they are not interior extrema.}
+ \label{fig:relaxed-extrema-u}
+\end{figure*}
+
+\begin{figure*}[t]
  \includegraphics[width=\textwidth]{strict_policy/extrema_tracks_by_soc.png}
- \caption{Largest and smallest strict-policy attenuation ratios over the sampled $U$ grid as functions of SOC, for the fixed temperature choices indicated in each panel. Open markers denote extrema occurring at a $U$-grid boundary. The rise of a sampled minimum or the decrease of a sampled maximum describes only this finite scan and its supplied model inputs; it is not evidence for a free-energy transition, a continuous-SOC derivative, or a universal SOC trend.}
+ \caption{Largest and smallest strict-policy attenuation ratios over the sampled $U$ grid as functions of SOC, for the fixed temperature choices indicated in each panel. Open markers denote extrema at endpoints of the available valid $U$ profiles; these can be caused by admissibility gaps or temperature cutoffs and are not necessarily at the outer scan boundary. The rise of a sampled minimum or the decrease of a sampled maximum describes only this finite scan and its supplied model inputs; it is not evidence for a free-energy transition, a continuous-SOC derivative, or a universal SOC trend.}
  \label{fig:strict-extrema-soc}
+\end{figure*}
+
+\begin{figure*}[t]
+ \includegraphics[width=\textwidth]{extrema_tracks_by_soc.png}
+ \caption{Relaxed-policy companion to Fig.~\ref{fig:strict-extrema-soc}. Each extremum is computed from the relaxed sampled $U$ set, which can include out-of-band roots; it is therefore a diagnostic comparison, not the strict physical-acceptance envelope. Open markers denote endpoints of the available valid $U$ profiles, not necessarily the outer scan boundary; neither policy performs interpolation or free-energy branch selection.}
+ \label{fig:relaxed-extrema-soc}
 \end{figure*}
 
 \subsection{Corrected legacy parameter families}
@@ -320,15 +344,13 @@ We also analyze maxima from the existing sampled family data without a new respo
  \label{fig:strict-temperature-peaks}
 \end{figure*}
 
-For the strict-only peak data, the sampled maximizing interaction shifts upward with SOC: from $U_{\mathrm{peak}}/t=52.5$ at $V_{\mathrm{SO}}/t=0$ to $86.5$ at $V_{\mathrm{SO}}/t=0.8$ for $T/T_c=0.3$--$0.9$ (the $T/T_c=0.999$ maximum at the latter SOC occurs at $86.0$). At $T/T_c=0.999$, the sampled peak height decreases from $0.9746$ at zero SOC to $0.9262$ at $V_{\mathrm{SO}}/t=0.8$. These are exact maxima on the stored $0.5t$ grid, not estimates of continuous extrema; the underlying family model uses the repository's fitted gap shape and does not rank multiple in-band roots by free energy.
-
-The branch-decomposition figure separates the energy-inversion branches and compares the spectral threshold $2E_{\min}$ with the commonly plotted effective-gap scale. This is a property of the adopted quasiparticle spectrum; it does not replace a finite-$q$ response calculation.
-
 \begin{figure*}[t]
- \includegraphics[width=\textwidth]{branch_decomposition.png}
- \caption{Branch-resolved decomposition of the constant-vertex scattering model and the model threshold $2E_{\min}=\hbar\omega$ for the displayed parameter set. The branch index $\sigma$ labels the two roots of $E(\epsilon)$, not Rashba helicity. The comparison with $2\Delta_{\mathrm{eff}}$ illustrates that the effective-gap scale is not the exact spectral threshold when the gap depends on band energy. This figure is a model diagnostic, not a finite-$q$ acoustic prediction.}
- \label{fig:branches-threshold}
+ \includegraphics[width=\textwidth]{temperature_peak_analysis_two_panel_relaxed.png}
+ \caption{Relaxed-policy companion to Fig.~\ref{fig:strict-temperature-peaks}, calculated from the same stored $0.5t$ $U$ grid without interpolation or smoothing. All 25 relaxed temperature-specific maxima in this extraction have out-of-band zero-temperature roots; most lie at or near the lower sampled-$U$ edge. They are included to show policy sensitivity, not as strict-admissibility results or a free-energy stability test.}
+ \label{fig:relaxed-temperature-peaks}
 \end{figure*}
+
+For the strict-policy peak data, the sampled maximizing interaction shifts upward with SOC: from $U_{\mathrm{peak}}/t=52.5$ at $V_{\mathrm{SO}}/t=0$ to $86.5$ at $V_{\mathrm{SO}}/t=0.8$ for $T/T_c=0.3$--$0.9$ (the $T/T_c=0.999$ maximum at the latter SOC occurs at $86.0$). At $T/T_c=0.999$, the sampled peak height decreases from $0.9746$ at zero SOC to $0.9262$ at $V_{\mathrm{SO}}/t=0.8$. These are exact maxima on the stored $0.5t$ grid, not estimates of continuous extrema; the underlying family model uses the repository's fitted gap shape and does not rank multiple in-band roots by free energy. The policy comparison explains why the strict peaks appear more clearly: all 25 strict maxima lie inside their strict-admissible $U$ intervals, whereas the relaxed extraction's maxima are at or near the low-$U$ scan edge and all have out-of-band zero-temperature roots. Those added relaxed points can dominate the plotted range and shift a global maximum to the boundary, visually obscuring the interior maxima of the admitted strict subset. This is a selection/domain effect, not evidence that the strict policy increases the response; the relaxed curves are diagnostic, and neither set establishes thermodynamic stability.
 
 The main energy-space calculation is checked against an independent lattice-energy-binning implementation and against the isotropic $s$-wave, flat-DOS, $\omega\to0$ limit. The latter reproduces the attenuation ratio $2f(\Delta(T))$ in the regime of the Levy benchmark~\cite{Levy}. These checks test the coherence-factor algebra, density-of-states normalization, and numerical integration under the model assumptions. They do not test the missing phonon vertex or the momentum selection of a real acoustic mode.
 
@@ -340,13 +362,7 @@ The main energy-space calculation is checked against an independent lattice-ener
 
 \section{Vertex sensitivity and limitations}
 
-The production integral's total-DOS product effectively assigns the same matrix element to every helicity pair. A separate code diagnostic compares this isotropic all-helicity prescription with a same-helicity prescription motivated by the $q\to0$ scalar-density overlap. The difference is visible in the vertex-sensitivity diagnostic. The latter is not a full finite-$q$ calculation: it filters helicity labels but still lacks the $\bm k,\bm q$-dependent matrix element and the acoustic dispersion.
-
-\begin{figure*}[t]
- \includegraphics[width=\textwidth]{soc_explicit_vertex.png}
- \caption{Repository diagnostic comparing all-helicity and same-helicity constant-vertex prescriptions. It illustrates sensitivity to vertex selection; it is not a momentum-conserving or finite-$q$ acoustic calculation and should not be used as a corrected physical prediction.}
- \label{fig:vertex-sensitivity}
-\end{figure*}
+The production integral's total-DOS product effectively assigns the same matrix element to every helicity pair. A separate repository diagnostic (not shown) compares this isotropic all-helicity prescription with a same-helicity prescription motivated by the $q\to0$ scalar-density overlap. That comparison is not a full finite-$q$ calculation: it filters helicity labels but still lacks the $\bm k,\bm q$-dependent matrix element and the acoustic dispersion.
 
 Several further ingredients are needed for a physical ultrasonic attenuation calculation: (i) a microscopic or measured strain vertex, including ordinary and correlated hopping and any Rashba modulation; (ii) phonon branch, polarization, mass density, and $v_s$; (iii) fixed-$q$ BdG matrix elements with $\bm k'=\bm k+\bm q+\bm G$; and (iv) an assessment of charge screening, collective phase response, disorder, and conserving vertex corrections. At exactly $q=0$, the total-density operator is conserved in the number-conserving theory, so a finite-frequency bare density response must be treated with the appropriate order of limits and gauge-restoring response corrections. None of these quantities is determined by the current electronic parameter set.
 

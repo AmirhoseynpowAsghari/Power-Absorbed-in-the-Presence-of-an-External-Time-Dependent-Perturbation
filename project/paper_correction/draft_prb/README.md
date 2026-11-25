@@ -4,7 +4,8 @@
 
 - `draft_prb.tex` — APS REVTeX 4.2 manuscript source using the `prb,reprint` two-column journal layout; this is the authoritative editable version.
 - `draft_references.bib` — bibliography entries used in the source.
-- `draft_prb_native.pdf` — separate APS/REVTeX two-column author-version proof generated from the current source; the older `draft_prb.pdf` is intentionally preserved unchanged.
+- `overleaf_prb_source_policy_comparison.zip` — self-contained Overleaf package for the current source and strict/relaxed figure comparisons.
+- `draft_prb_native.pdf` — prior APS/REVTeX two-column author-version proof; it predates the latest strict/relaxed figure edits and must be rebuilt before it can be treated as a proof of the current source. The older `draft_prb.pdf` is intentionally preserved unchanged.
 - `draft_prb.pdf` — earlier Pandoc-to-Typst reading proof, retained unchanged for provenance; it does not represent the current REVTeX source.
 
 The archived corrected paper at `../../../archive/pre_f02_baseline/paper_correction_results/arXiv_2607.02812_corrected.pdf` is retained as a read-only reference; this draft is a separate manuscript and does not overwrite it.
@@ -31,26 +32,20 @@ The full earlier finite-q audit is in `../ultrasonic/FINITE_Q_ACOUSTIC_COUPLING_
 
 ## Figures included by reference
 
-No figure data or image files were copied, overwritten, or regenerated for the manuscript. The `.tex` points directly to these existing repository assets:
+No repository figure data or image files were overwritten or regenerated for this manuscript revision. The `.tex` points directly to existing repository assets; the updated Overleaf ZIP packages copies of the referenced images so it is self-contained. The strict-only family and extrema figures now have adjacent relaxed-policy companion figures; relaxed plots are explicitly diagnostic and are never substituted for missing strict values.
 
-1. `ultrasonic/figures/strict_policy/WWN_vs_TTc_and_Delta_VSOfamilies.png` — strict-window temperature/gap families.
-2. `ultrasonic/figures/strict_policy/WWN_vs_U_families_VSO.png` — strict-window $U$ families across SOC.
-3. `ultrasonic/figures/strict_policy/WWN_vs_VSO_families_U.png` — strict-window SOC families across $U$.
-4. `ultrasonic/figures/W_WN_groups_Dt_scan.png` — corrected first-paper Group C, retained as a relaxed-window comparison; the $\Delta_t=4.5t$ root is out of band and diagnostic.
-5. `ultrasonic/figures/W_WN_groups_VSO_scan.png` — corrected first-paper Group D, retained as a relaxed-window comparison distinct from the strict scan.
-6. `ultrasonic/analysis/wwn_temperature_maxima/temperature_envelope_max_vs_U.png` — pointwise envelope over the five sampled temperatures, with strict and relaxed policies separately styled.
-7. `ultrasonic/analysis/wwn_temperature_maxima/temperature_peak_analysis_two_panel.png` — strict-only exact sampled maxima and their temperature dependence.
-8. `ultrasonic/figures/W_WN_coherence_variants.png` — signed, absolute-value, earlier-paper, and textbook coherence prescriptions; only the signed form is used in the primary results.
-9. `ultrasonic/figures/branch_decomposition.png` — energy-root branches and the model-specific spectral threshold.
-10. `ultrasonic/figures/dual_space_k_vs_energy.png` — numerical cross-check within the unrestricted model.
-11. `ultrasonic/figures/soc_explicit_vertex.png` — helicity-vertex sensitivity diagnostic, explicitly not a finite-$q$ calculation.
-12. `ultrasonic/figures/branch_structure_sigma_vs_s.png` — explains the distinct energy-root (`sigma`) and Rashba-helicity (`s`) indices.
-13. `ultrasonic/figures/coherence_factors_per_branch.png` — branch-pair Case-I coherence diagnostic illustrating why signed root variables enter the transition weight.
-14. `ultrasonic/figures/strict_policy/soc_scans_by_U.png` — existing strict-policy SOC scans at fixed `U`; absent/rejected samples remain gaps.
-15. `ultrasonic/figures/strict_policy/extrema_by_U.png` — strict-policy sampled maxima/minima versus `U` for the shown SOC and temperature panels.
-16. `ultrasonic/figures/strict_policy/extrema_tracks_by_soc.png` — sampled extrema over the stored `U` grid versus SOC; open markers identify `U`-boundary extrema.
+- `ultrasonic/figures/strict_policy/WWN_vs_U_families_VSO.png` and `ultrasonic/figures/WWN_vs_U_families_VSO.png` — strict/relaxed $U$ families across SOC.
+- `ultrasonic/figures/strict_policy/WWN_vs_VSO_families_U.png` and `ultrasonic/figures/WWN_vs_VSO_families_U.png` — strict/relaxed SOC families across $U$.
+- `ultrasonic/figures/strict_policy/soc_scans_by_U.png` and `ultrasonic/figures/soc_scans_by_U.png` — strict/relaxed fixed-$U$ SOC scans.
+- `ultrasonic/figures/strict_policy/extrema_by_U.png` and `ultrasonic/figures/extrema_by_U.png` — strict/relaxed sampled extrema versus $U$.
+- `ultrasonic/figures/strict_policy/extrema_tracks_by_soc.png` and `ultrasonic/figures/extrema_tracks_by_soc.png` — strict/relaxed extrema tracks versus SOC.
+- `ultrasonic/analysis/wwn_temperature_maxima/temperature_peak_analysis_two_panel.png` and `temperature_peak_analysis_two_panel_relaxed.png` — strict/relaxed sampled peak locations and magnitudes.
+- `ultrasonic/analysis/wwn_temperature_maxima/temperature_envelope_max_vs_U.png` — pointwise envelope over sampled temperatures, with strict and relaxed policies already styled separately.
+- `ultrasonic/figures/W_WN_groups_Dt_scan.png` and `W_WN_groups_VSO_scan.png` — corrected legacy Group C/D relaxed-window composites, kept distinct from the regenerated strict-policy figures.
+- `ultrasonic/figures/W_WN_coherence_variants.png`, `coherence_factors_per_branch.png`, and `branch_structure_sigma_vs_s.png` — coherence, energy-root, and helicity-label diagnostics.
+- `ultrasonic/figures/dual_space_k_vs_energy.png` — numerical cross-check within the unrestricted model.
 
-Strict-policy results remain primary; missing or rejected strict samples are gaps, not zeros. The corrected Group C/D composites are shown separately and explicitly identified as relaxed-window legacy comparisons, not replacements for the strict family figures. The maxima plots use only existing sampled data; no interpolation, smoothing, jitter, or response recalculation was applied.
+The strict temperature/gap family image, branch-decomposition/threshold image, and SOC vertex-sensitivity image were removed from the manuscript at the author's request. Strict-policy results remain primary; rejected or missing strict samples are gaps, not zeros. The policy-specific peak comparison uses existing sampled data only: no interpolation, smoothing, jitter, or response recalculation was applied. The strict maxima are inside their admissible $U$ intervals, while all 25 relaxed peak records have out-of-band zero-temperature roots and lie at or near the low-$U$ end of the sampled range. This explains their different visual prominence without implying that the strict policy itself increases absorption or that either set establishes free-energy stability.
 
 ## Build
 
@@ -60,7 +55,7 @@ The editable source requests the APS Physical Review B `reprint` layout: two-col
 latexmk -pdf -interaction=nonstopmode draft_prb.tex
 ```
 
-`draft_prb_native.pdf` is a separate 16-page XeTeX/REVTeX 4.2 author-version proof generated from the current source and existing repository figures. It follows the Physical Review article typography and two-column composition illustrated by the attached Li (2008) paper; the `.tex` and `.bib` remain the editable source of record. The published-paper masthead, volume/page assignment, DOI, and received/published dates in the example are publisher metadata and have not been fabricated for this unpublished draft. The older `draft_prb.pdf` remains untouched: it is the earlier Pandoc-to-Typst proof and does not match the current source. Figure paths are relative and assume compilation from this directory.
+`draft_prb_native.pdf` is the prior 16-page XeTeX/REVTeX 4.2 author-version proof; it has not been rebuilt after the latest figure changes, so it does not represent the current `.tex`. The source follows the Physical Review article typography and two-column composition illustrated by the attached Li (2008) paper; the `.tex` and `.bib` remain the editable source of record. The published-paper masthead, volume/page assignment, DOI, and received/published dates in the example are publisher metadata and have not been fabricated for this unpublished draft. The older `draft_prb.pdf` remains untouched: it is the earlier Pandoc-to-Typst proof and does not match the current source. Figure paths are relative and assume compilation from this directory.
 
 ## Open items for author review
 
